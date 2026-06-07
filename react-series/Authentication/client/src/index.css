@@ -11,7 +11,8 @@ html,body {
 
 .container{
   height:100vh;
-  background-color: rgb(243, 225, 225);
+  background-color: rgb(0, 0, 0);
+  /* color: azure; */
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -20,8 +21,10 @@ html,body {
 
 }
 .box{
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(3, 101, 146);
+  background-color: rgb(160, 219, 236);
   padding: 10px 20px;
+  border-radius: 5px;
   display: flex;
   gap: 30px;  
   flex-direction: column;

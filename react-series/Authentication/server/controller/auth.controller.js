@@ -4,9 +4,9 @@ import bcrypt from 'bcryptjs'
 
 export const SignUp = async(req, res) => {
     try {
-        const {name, email, password} = req.body
+        const {firstName, lastName, email, password, userName} = req.body
 
-        if(!name || !email || !password){
+        if(!firstName || !lastName || !email || !password || !userName){
             return res.status(400).json({message:"send all details"})
         }
         
@@ -22,9 +22,11 @@ export const SignUp = async(req, res) => {
 
         //step 3 create new user 
         const user = await User.create({
-            name,
+            firstName,
+            lastName,
             email,
-            password: hassedPassword
+            password: hassedPassword,
+            userName
         })  
 
 
@@ -47,8 +49,10 @@ export const SignUp = async(req, res) => {
 
 
         return res.status(201).json({user: {
-            name,
-            email
+            firstName,
+            lastName,
+            email,
+            userName
         }})
 
         
